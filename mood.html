@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Your Mood 🐾</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom, #ffe5ec, #fcd5ce);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #c9184a;
+      margin-bottom: 20px;
+    }
+
+    .mood-btn {
+      background: #ffb3c6;
+      border: none;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 25px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .mood-btn:hover {
+      transform: scale(1.1);
+      background: #ff8fab;
+    }
+
+    #animal-display {
+      margin-top: 30px;
+      display: none;
+    }
+
+    #animal-img {
+      width: 180px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    #animal-msg {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #6a0572;
+    }
+
+    .next-button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #ff80ab;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .next-button:hover {
+      background-color: #ff4d6d;
+    }
+  </style>
+</head>
+<body>
+  <h1>How are you feeling right now?</h1>
+
+  <div>
+    <button class="mood-btn" onclick="showAnimal('happy')">😊 Happy</button>
+    <button class="mood-btn" onclick="showAnimal('sad')">😔 Sad</button>
+    <button class="mood-btn" onclick="showAnimal('lazy')">😴 Lazy</button>
+    <button class="mood-btn" onclick="showAnimal('excited')">🤩 Excited</button>
+    <button class="mood-btn" onclick="showAnimal('romantic')">🥰 Romantic</button>
+  </div>
+
+  <div id="animal-display">
+    <img id="animal-img" src="" alt="Mood Animal" />
+    <p id="animal-msg"></p>
+  </div>
+
+  <button class="next-button" onclick="goToNextPage()">Next Surprise ➡️</button>
+
+ <script>
+    const animals = {
+      happy: {
+        img: "happy.jpeg",
+        msg: "Yay! You deserve all the sparkles today ✨🐾"
+      },
+      sad: {
+        img: "sad.gif",
+        msg: "Awww, here’s a cuddle cat to cheer you up 💖🐱"
+      },
+      lazy: {
+        img: "lazzy.gif",
+        msg: "Take it slow today... like a fluffy potato 🥔🐻"
+      },
+      excited: {
+        img: "ex.gif",
+        msg: "Zoomies mood ON! Let’s bounce 🐇🎉"
+      },
+      romantic: {
+        img: "cute.jpeg",
+        msg: "Heart eyes? Here’s a love just for you 💘🐾"
+      }
+    };
+
+    function showAnimal(mood) {
+      const data = animals[mood];
+      document.getElementById('animal-img').src = data.img;
+      document.getElementById('animal-msg').textContent = data.msg;
+      document.getElementById('animal-display').style.display = 'block';
+    }
+
+    function goToNextPage() {
+      window.location.href = "rhymes.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Bhumika 💜</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(circle, #fff5f7, #fbd0d9);
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      background: #ff69b4;
+      position: absolute;
+      top: -20px;
+      border-radius: 50% 50% 0 0;
+      transform: rotate(-45deg);
+      animation: floatHearts 6s linear infinite;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 30px 20px 80px;
+    }
+
+    .photo {
+      width: 90%;
+      max-width: 260px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
+      margin: 20px auto;
+      display: block;
+    }
+
+    h1 {
+      color: #c9184a;
+      font-size: 22px;
+      padding: 0 10px;
+    }
+
+    .note {
+      max-width: 90%;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 192, 203, 0.6);
+      font-size: 16px;
+      color: #6a0572;
+      line-height: 1.6;
+    }
+
+    .countdown {
+      font-size: 18px;
+      color: #b5179e;
+      margin-top: 15px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .cat {
+      position: fixed;
+      width: 90px;
+      bottom: 0px;
+      z-index: 5;
+      animation: wiggle 3s ease-in-out infinite;
+    }
+
+    .cat.left {
+      left: 5px;
+    }
+
+    .cat.right {
+      right: 5px;
+      transform: scaleX(-1);
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Hearts -->
+  <div class="hearts">
+    <div class="heart" style="left: 12%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 28%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 48%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 68%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 88%; animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Content Container -->
+  <div class="container">
+    <h1>This is only for the <em>special one</em>... from <em>her special one</em>, maybe 😉❤️</h1>
+    <img src="photo.jpg" alt="Bhumika" class="photo" />
+    <div class="note">
+      Hey Bhumika! 🌸<br>
+      Just wanted to make you smile today.<br>
+      You’re like sunshine in human form ☀️<br>
+      This little site is my way of saying –<br>
+      You're special, you're loved, and you’re the cutest of them all 🐱💖
+    </div>
+    <div class="countdown">
+      ⏳ Next surprise in <span id="timer">20</span> seconds...
+    </div>
+  </div>
+
+  <!-- Cute Cats -->
+  <img src="https://imgs.search.brave.com/j8mOJXZbvTnj0c4zv-7exE_NkzWHMil5iP4sLvPUpt0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzE0Lzk2LzY4LzI5/LzM2MF9GXzE0OTY2/ODI5MTVfTGJtVUVO/aDN0UXZ3bmJqMTdW/SGVFRktJVkVGSFNl/cXMuanBn" class="cat left" />
+  <img src="https://imgs.search.brave.com/j8mOJXZbvTnj0c4zv-7exE_NkzWHMil5iP4sLvPUpt0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzE0Lzk2LzY4LzI5/LzM2MF9GXzE0OTY2/ODI5MTVfTGJtVUVO/aDN0UXZ3bmJqMTdW/SGVFRktJVkVGSFNl/cXMuanBn" class="cat right" />
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2024/03/01/audio_97a88e2ef8.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Countdown & Redirect Script -->
+  <script>
+    let timeLeft = 20;
+    const timerDisplay = document.getElementById('timer');
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      timerDisplay.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        window.location.href = "mood.html";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

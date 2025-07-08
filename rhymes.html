@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rhymes & Surprise 🎁</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(circle at top, #ffe6f0, #ffe5ec);
+      text-align: center;
+      color: #8e005d;
+      overflow-x: hidden;
+      animation: bgSlide 20s infinite alternate ease-in-out;
+      position: relative;
+    }
+
+    @keyframes bgSlide {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 100%; }
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 32px;
+      color: #ff4d6d;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #fff, 0 0 10px #ff4d6d; }
+      100% { text-shadow: 0 0 15px #fff, 0 0 25px #ff4d6d; }
+    }
+
+    .rhyme-box {
+      background: #ffffffdd;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.3);
+      animation: slideIn 1.5s ease-out;
+    }
+
+    .gift-section {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #b5179e;
+      background: #fff0f5;
+      padding: 15px;
+      border-radius: 10px;
+      animation: fadeIn 2s 2s ease forwards;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
+    }
+
+    .gift-section strong {
+      color: #ff006e;
+    }
+
+    .cat-img {
+      width: 100px;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+      animation: bounce 3s infinite;
+    }
+
+    .btn-group {
+      margin-top: 40px;
+      animation: fadeIn 3s ease;
+    }
+
+    .action-btn {
+      background-color: #ff80ab;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff80ab;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .action-btn:hover {
+      background-color: #ff4d6d;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .firework {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: gold;
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+    }
+
+    @keyframes explode {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(3) translateY(-150px); }
+    }
+
+    .crack {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: url('https://pngimg.com/uploads/crack/crack_PNG55.png') no-repeat center;
+      background-size: contain;
+      opacity: 0.5;
+      pointer-events: none;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    .slideshow {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .slideshow img {
+      width: 70px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(255, 105, 180, 0.4);
+      transition: transform 0.3s;
+    }
+
+    .slideshow img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎵 A Rhyme for You 🎵</h1>
+
+  <div class="rhyme-box">
+    Roses are red, violets are blue,<br>
+    The stars shine bright, just like you ✨<br><br>
+    With every smile, you light up the day,<br>
+    In every little moment, you find a way 💗<br><br>
+    From sunshine to stardust and skies so wide,<br>
+    You're special forever, with love worldwide 🌍💫
+  </div>
+
+  <div class="slideshow">
+    <img src="img1.jpg" alt="Bhumika 1">
+    <img src="img2.jpg" alt="Bhumika 2">
+    <img src="img3.jpg" alt="Bhumika 3">
+    <img src="img4.jpg" alt="Bhumika 4">
+  </div>
+
+  <div class="gift-section">
+    🎁 This whole surprise was already gifted to you by your special friend <strong>Ansh</strong>!<br>
+    He just wanted to see you smile 😄💝
+  </div>
+
+  <div class="btn-group">
+    <button class="action-btn" onclick="restartSurprise()">🔁 Restart</button>
+    <button class="action-btn" onclick="sendMessage()">💬 Message for Bhumika</button>
+  </div>
+
+  <!-- ✅ Correct placement of the audio -->
+  <audio id="bgm" autoplay loop>
+    <source src="so.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function restartSurprise() {
+      window.location.href = "index.html";
+    }
+
+    function sendMessage() {
+      alert("Dear Bhumika, you're the sparkle in every surprise! 💖\n~ From your special one 🌸");
+    }
+
+    function createFirework(x, y) {
+      for (let i = 0; i < 20; i++) {
+        const fw = document.createElement('div');
+        fw.className = 'firework';
+        fw.style.left = x + 'px';
+        fw.style.top = y + 'px';
+        fw.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+        fw.style.transform = `rotate(${Math.random() * 360}deg)`;
+        document.body.appendChild(fw);
+        setTimeout(() => fw.remove(), 1000);
+      }
+    }
+
+    setInterval(() => {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight / 2;
+      createFirework(x, y);
+    }, 2500);
+
+    // Autoplay handling (bypassing browser block)
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('bgm');
+      const play = () => {
+        audio.play().catch(err => console.log('Autoplay blocked:', err));
+        document.removeEventListener('click', play);
+      };
+      document.addEventListener('click', play);
+    });
+  </script>
+</body>
+</html>
